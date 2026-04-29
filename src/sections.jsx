@@ -45,7 +45,7 @@ export const Nav = ({ dark, onToggleDark, sigVariant }) => {
             </svg>
           )}
         </button>
-        <a href="#" className="nav-cv" onClick={(e) => e.preventDefault()}>
+        <a href="/CV.pdf" className="nav-cv" download>
           CV ↓
         </a>
       </div>

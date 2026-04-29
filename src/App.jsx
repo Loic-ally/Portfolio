@@ -147,10 +147,10 @@ function Contact({ sigVariant, intensity }) {
         </div>
 
         <div className="contact-foot reveal">
-          <button type="button" className="btn-cv" onClick={(e) => e.preventDefault()}>
+          <a className="btn-cv" href="/CV.pdf" download>
             Télécharger le CV
             <span aria-hidden="true">↓</span>
-          </button>
+          </a>
           <span className="contact-langs">
             <b>FR</b> natif · <b>EN</b> C1 · <b>IT</b> B1
           </span>
