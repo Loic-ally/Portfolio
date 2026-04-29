@@ -147,6 +147,7 @@ export const ContactComposition = ({ intensity = 0.7 }) => {
 };
 
 // Visuel projet — composition différente par projet
+// Visuel projet — composition différente par projet
 export const ProjectVisual = ({ kind = "circuit" }) => {
   if (kind === "circuit") {
     // Nanotekspice — circuit / portes logiques stylisé
@@ -233,7 +234,98 @@ export const ProjectVisual = ({ kind = "circuit" }) => {
       </svg>
     );
   }
-  // codewash — diff / lignes de code
+  if (kind === "teams") {
+    // MyTeams — Architecture réseau Client / Serveur
+    return (
+      <svg viewBox="0 0 320 200" className="proj-svg" aria-hidden="true">
+        {/* Serveur */}
+        <rect x="130" y="40" width="60" height="80" fill="none" stroke="currentColor" strokeWidth="1" />
+        <line x1="130" y1="55" x2="190" y2="55" stroke="currentColor" strokeWidth="0.5" />
+        <line x1="130" y1="70" x2="190" y2="70" stroke="currentColor" strokeWidth="0.5" />
+        <text x="160" y="105" textAnchor="middle" fontFamily="ui-monospace,monospace" fontSize="9" fill="currentColor" opacity="0.8">
+          SERVER
+        </text>
+
+        {/* Clients */}
+        <rect x="30" y="140" width="40" height="30" fill="none" stroke="currentColor" strokeWidth="1" />
+        <rect x="140" y="160" width="40" height="30" fill="none" stroke="currentColor" strokeWidth="1" />
+        <rect x="250" y="140" width="40" height="30" fill="none" stroke="currentColor" strokeWidth="1" />
+
+        {/* Connexions (lignes pointillées) */}
+        <path d="M 50 140 L 50 120 L 140 120 L 140 120" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="3 3" opacity="0.6" />
+        <path d="M 160 160 L 160 120" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="3 3" opacity="0.6" />
+        <path d="M 270 140 L 270 120 L 180 120" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="3 3" opacity="0.6" />
+
+        {/* Paquets de données */}
+        <circle cx="90" cy="120" r="2" fill="currentColor" />
+        <circle cx="160" cy="140" r="2" fill="currentColor" />
+        <circle cx="230" cy="120" r="2" fill="currentColor" />
+      </svg>
+    );
+  }
+  if (kind === "arcade") {
+    // Arcade — Borne d'arcade stylisée et interface modulaire
+    return (
+      <svg viewBox="0 0 320 200" className="proj-svg" aria-hidden="true">
+        {/* Silhouette de la borne */}
+        <path d="M 100 20 L 220 20 L 220 50 L 240 90 L 240 180 L 80 180 L 80 90 L 100 50 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.8"/>
+        {/* Écran */}
+        <rect x="110" y="40" width="100" height="70" fill="currentColor" opacity="0.05" stroke="currentColor" strokeWidth="1"/>
+        {/* Élément in-game abstrait */}
+        <circle cx="140" cy="80" r="6" fill="currentColor" opacity="0.8"/>
+        <path d="M 140 80 L 146 76 L 146 84 Z" fill="var(--bg-color, white)" opacity="0.9" />
+        <rect x="160" y="78" width="4" height="4" fill="currentColor" opacity="0.6" />
+        <rect x="180" y="78" width="4" height="4" fill="currentColor" opacity="0.6" />
+        {/* Panel de contrôle */}
+        <line x1="80" y1="120" x2="240" y2="120" stroke="currentColor" strokeWidth="1" />
+        <line x1="90" y1="130" x2="230" y2="130" stroke="currentColor" strokeWidth="0.5" opacity="0.5"/>
+        {/* Joystick */}
+        <line x1="120" y1="120" x2="120" y2="105" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="120" cy="105" r="4" fill="currentColor" />
+        {/* Boutons */}
+        <circle cx="180" cy="112" r="3" fill="currentColor" opacity="0.7"/>
+        <circle cx="195" cy="115" r="3" fill="currentColor" opacity="0.7"/>
+        {/* Fentes pièces */}
+        <rect x="130" y="150" width="6" height="15" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.6"/>
+        <rect x="184" y="150" width="6" height="15" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.6"/>
+      </svg>
+    );
+  }
+  if (kind === "gamejam") {
+    // Epitech Game Jam — Pression du temps (horloge) et game dev (manette)
+    return (
+      <svg viewBox="0 0 320 200" className="proj-svg" aria-hidden="true">
+        {/* Flèches de fond (vitesse / temps qui passe) */}
+        <path d="M 60 100 L 120 60 L 120 140 Z" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.15"/>
+        <path d="M 100 100 L 160 60 L 160 140 Z" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.15"/>
+
+        {/* Horloge / Timer */}
+        <circle cx="200" cy="100" r="40" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.9" />
+        <circle cx="200" cy="100" r="3" fill="currentColor" />
+        <line x1="200" y1="100" x2="200" y2="70" stroke="currentColor" strokeWidth="1.5" />
+        <line x1="200" y1="100" x2="220" y2="115" stroke="currentColor" strokeWidth="1.5" />
+        {/* Ticks de l'horloge */}
+        {[0, 90, 180, 270].map(deg => (
+          <line key={deg} x1="200" y1="60" x2="200" y2="65" stroke="currentColor" strokeWidth="1" transform={`rotate(${deg} 200 100)`} />
+        ))}
+
+        {/* Manette en surimpression */}
+        <rect x="40" y="90" width="80" height="50" rx="15" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="1" />
+        {/* Croix directionnelle */}
+        <rect x="55" y="110" width="20" height="6" fill="currentColor" opacity="0.7"/>
+        <rect x="62" y="103" width="6" height="20" fill="currentColor" opacity="0.7"/>
+        {/* Boutons d'action */}
+        <circle cx="95" cy="120" r="4" fill="none" stroke="currentColor" strokeWidth="1" />
+        <circle cx="105" cy="110" r="4" fill="none" stroke="currentColor" strokeWidth="1" />
+
+        {/* Lignes de vitesse */}
+        <line x1="40" y1="160" x2="140" y2="160" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" opacity="0.5"/>
+        <line x1="70" y1="170" x2="160" y2="170" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 6" opacity="0.4"/>
+      </svg>
+    );
+  }
+  
+  // Par défaut (Codewash) — Fenêtre de diff / lignes de code
   return (
     <svg viewBox="0 0 320 200" className="proj-svg" aria-hidden="true">
       {/* fenêtre */}

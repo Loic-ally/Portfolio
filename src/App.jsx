@@ -66,7 +66,7 @@ function Hero({ sigVariant, intensity }) {
 
       <div className="hero-meta reveal">
         <span className="hero-meta-dot" />
-        <span>Disponible — Été 2026</span>
+        <span>Disponible — Anytime</span>
         <span>·</span>
         <span>Mulhouse, FR</span>
       </div>

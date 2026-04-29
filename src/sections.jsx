@@ -93,7 +93,7 @@ export const Projects = ({ sigVariant }) => {
       type: "Projet EPITECH",
       desc: "Simulateur de composants électroniques en ligne de commande. Reproduction du comportement de composants systèmes (RAM, ROM, Latch, portes logiques…) dans un shell interactif. Architecture orientée objet, gestion de circuits via fichiers de description.",
       visual: "circuit",
-      gh: "#",
+      gh: "https://github.com/Loic-ally/Nanotekspice",
       span: "wide",
     },
     {
@@ -103,7 +103,7 @@ export const Projects = ({ sigVariant }) => {
       type: "Projet EPITECH",
       desc: "Développement de jeux pour Game Boy. Programmation bas-niveau en C avec contraintes hardware réelles : gestion mémoire, sprites, input, son. Permet de créer n'importe quel jeu sur la console.",
       visual: "gameboy",
-      gh: "#",
+      gh: "#", // Gardé tel quel comme il n'y avait pas de lien spécifique
       span: "narrow",
     },
     {
@@ -113,10 +113,41 @@ export const Projects = ({ sigVariant }) => {
       type: "Projet EPITECH",
       desc: "Nettoyage et refactoring d'une codebase issue de vibecoding. Documentation, correction de bugs, restructuration et mise aux normes d'un projet existant.",
       visual: "code",
-      gh: "#",
+      gh: "https://github.com/Loic-ally/codewash-mirror",
       span: "narrow",
     },
+    {
+      n: "04",
+      name: "MyTeams",
+      stack: ["C", "Réseau"],
+      type: "Projet EPITECH",
+      desc: "Clone de Microsoft Teams en ligne de commande. Architecture client/serveur multiplexée en C, gestion des sockets, protocole de communication sur mesure et persistance des données.",
+      visual: "teams", 
+      gh: "https://github.com/Loic-ally/teams-mirror",
+      span: "wide",
+    },
+    {
+      n: "05",
+      name: "Arcade",
+      stack: ["C++", "OOP"],
+      type: "Projet EPITECH",
+      desc: "Plateforme d'arcade modulaire. Chargement dynamique de jeux et de bibliothèques graphiques (SFML, SDL2, ncurses) à l'exécution via dlopen/dlsym. Architecture hautement découplée.",
+      visual: "arcade",
+      gh: "https://github.com/Loic-ally/Arcade",
+      span: "narrow",
+    },
+    {
+      n: "06",
+      name: "Epitech Game Jam",
+      stack: ["C++", "Game Dev"],
+      type: "Game Jam",
+      desc: "Création d'un jeu vidéo de A à Z en un temps limité lors d'une Game Jam Epitech. Conception de la logique de jeu, de l'interface et du gameplay sous pression.",
+      visual: "gamejam",
+      gh: "https://github.com/Loic-ally/Epitech-Game-Jam",
+      span: "narrow",
+    }
   ];
+
   return (
     <section id="projects" className="section section-projects" data-screen-label="Projets">
       <div className="section-head">
@@ -124,7 +155,7 @@ export const Projects = ({ sigVariant }) => {
         <span className="section-kicker">Projets sélectionnés</span>
       </div>
       <h2 className="section-title section-title-tight">
-        Trois projets — du bas niveau au refactor.
+        Quelques projets — du bas niveau au refactor.
       </h2>
 
       <ol className="projects">
@@ -134,19 +165,22 @@ export const Projects = ({ sigVariant }) => {
               <ProjectVisual kind={p.visual} />
               <span className="project-num">{p.n}</span>
             </Tilt>
+
             <div className="project-meta">
               <header className="project-head">
                 <h3 className="project-name">{p.name}</h3>
                 <span className="project-type">{p.type}</span>
               </header>
               <p className="project-desc">{p.desc}</p>
+
               <div className="project-foot">
                 <ul className="stack-inline">
                   {p.stack.map((s) => (
                     <li key={s}>{s}</li>
                   ))}
                 </ul>
-                <a className="link-arrow" href={p.gh} onClick={(e) => p.gh === "#" && e.preventDefault()}>
+
+                <a className="link-arrow" href={p.gh} target={p.gh !== "#" ? "_blank" : undefined} rel={p.gh !== "#" ? "noreferrer" : undefined} onClick={(e) => p.gh === "#" && e.preventDefault()}>
                   Voir sur GitHub
                   <span aria-hidden="true">↗</span>
                 </a>
@@ -288,13 +322,6 @@ export const Education = () => (
         <div className="edu-what">
           <h3>EPITECH — Programme Grande École</h3>
           <p>Diplôme d'expert en technologies de l'information (+5 ans).</p>
-        </div>
-      </li>
-      <li className="edu">
-        <div className="edu-when">2021 — 2024</div>
-        <div className="edu-what">
-          <h3>Lycée Georges Colomb · Lure</h3>
-          <p>Baccalauréat général, mention. Spécialités&nbsp;: Mathématiques · Physique-Chimie.</p>
         </div>
       </li>
     </ul>
