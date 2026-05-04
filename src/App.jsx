@@ -31,6 +31,8 @@ import {
   Footer,
 } from "./sections.jsx";
 
+const assetBase = import.meta.env.BASE_URL;
+
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/ {
   dark: false,
   density: "regular",
@@ -147,7 +149,7 @@ function Contact({ sigVariant, intensity }) {
         </div>
 
         <div className="contact-foot reveal">
-          <a className="btn-cv" href="/CV.pdf" download>
+          <a className="btn-cv" href={`${assetBase}CV.pdf`} download>
             Télécharger le CV
             <span aria-hidden="true">↓</span>
           </a>

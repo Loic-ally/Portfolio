@@ -3,6 +3,8 @@
 import { SignatureGlyph, ProjectVisual } from "./geometry.jsx";
 import { Tilt } from "./effects.jsx";
 
+const assetBase = import.meta.env.BASE_URL;
+
 export const Nav = ({ dark, onToggleDark, sigVariant }) => {
   const links = [
     { id: "about", label: "À propos" },
@@ -45,7 +47,7 @@ export const Nav = ({ dark, onToggleDark, sigVariant }) => {
             </svg>
           )}
         </button>
-        <a href="/CV.pdf" className="nav-cv" download>
+        <a href={`${assetBase}CV.pdf`} className="nav-cv" download>
           CV ↓
         </a>
       </div>
