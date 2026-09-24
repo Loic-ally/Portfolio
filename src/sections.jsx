@@ -330,13 +330,29 @@ export const Education = () => (
   </section>
 );
 
-export const Footer = ({ sigVariant }) => (
+export const LEGAL_PAGES = [
+  { id: "mentions", href: `${assetBase}mentions-legales.html`, label: "Mentions légales" },
+  { id: "confidentialite", href: `${assetBase}confidentialite.html`, label: "Confidentialité" },
+];
+
+export const Footer = ({ sigVariant, current }) => (
   <footer className="footer">
     <div className="footer-inner">
       <span className="footer-mark">
         <SignatureGlyph variant={sigVariant} size={16} strokeWidth={0.9} />
       </span>
-      <span>© 2026 Loïc Philippe — Construit à Mulhouse.</span>
+      <span>© {new Date().getFullYear()} Loïc Philippe — Construit à Mulhouse.</span>
+      <nav className="footer-legal" aria-label="Informations légales">
+        <ul>
+          {LEGAL_PAGES.map((p) => (
+            <li key={p.id}>
+              <a href={p.href} aria-current={p.id === current ? "page" : undefined}>
+                {p.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   </footer>
 );

@@ -199,6 +199,7 @@ export default function App() {
 
   return (
     <>
+      <a className="skip-link" href="#contenu">Aller au contenu</a>
       <ScrollProgress />
       {t.softCursor && <SoftCursor />}
       <Nav
@@ -207,26 +208,28 @@ export default function App() {
         sigVariant={t.signature}
       />
 
-      <Hero sigVariant={t.signature} intensity={t.shapeIntensity} />
+      <main id="contenu">
+        <Hero sigVariant={t.signature} intensity={t.shapeIntensity} />
 
-      <SectionDivider variant={t.signature} />
+        <SectionDivider variant={t.signature} />
 
-      <About sigVariant={t.signature} />
-      <SectionDivider variant={t.signature} />
+        <About sigVariant={t.signature} />
+        <SectionDivider variant={t.signature} />
 
-      <Projects sigVariant={t.signature} />
-      <SectionDivider variant={t.signature} />
+        <Projects sigVariant={t.signature} />
+        <SectionDivider variant={t.signature} />
 
-      <Stack />
-      <SectionDivider variant={t.signature} />
+        <Stack />
+        <SectionDivider variant={t.signature} />
 
-      <Experience />
-      <SectionDivider variant={t.signature} />
+        <Experience />
+        <SectionDivider variant={t.signature} />
 
-      <Education />
-      <SectionDivider variant={t.signature} />
+        <Education />
+        <SectionDivider variant={t.signature} />
 
-      <Contact sigVariant={t.signature} intensity={t.shapeIntensity} />
+        <Contact sigVariant={t.signature} intensity={t.shapeIntensity} />
+      </main>
 
       <Footer sigVariant={t.signature} />
 
