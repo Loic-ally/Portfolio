@@ -15,8 +15,6 @@ const OWNER = {
   name: "Loïc Philippe",
   city: "Mulhouse, France",
   email: "loic.philippe@epitech.eu",
-  phone: "+33767498084",
-  phoneLabel: "+33 7 67 49 80 84",
 };
 
 const HOST = {
@@ -102,15 +100,12 @@ const MentionsLegales = () => (
         <dd>
           <Email />
         </dd>
-        <dt>Téléphone</dt>
-        <dd>
-          <a href={`tel:${OWNER.phone}`}>{OWNER.phoneLabel}</a>
-        </dd>
       </dl>
       <p>
         Conformément aux dispositions de la LCEN applicables aux éditeurs non
-        professionnels, l'adresse postale de l'éditeur n'est pas publiée ; ses
-        éléments d'identification personnelle ont été communiqués à l'hébergeur.
+        professionnels, l'adresse postale et le numéro de téléphone de l'éditeur ne sont
+        pas publiés ; ses éléments d'identification personnelle ont été communiqués à
+        l'hébergeur.
       </p>
     </Block>
 
